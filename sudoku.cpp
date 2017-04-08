@@ -4,7 +4,6 @@
 	> Mail: 
 	> Created Time: Tue 28 Mar 2017 09:25:41 PM CST
  ************************************************************************/
-
 #include"sudoku.h"
 #include<random>
 #include<ctime>
