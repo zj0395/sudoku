@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>700</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>500</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="setFont">
+    <property name="title">
+     <string>字体设置</string>
+    </property>
+    <addaction name="action"/>
+    <addaction name="action_2"/>
+   </widget>
+   <widget class="QMenu" name="newGame">
+    <property name="title">
+     <string>新游戏</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="saveGame">
+    <property name="title">
+     <string>存档</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="loadGame">
+    <property name="title">
+     <string>读档</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>其它</string>
+    </property>
+    <addaction name="show_shortcuts"/>
+    <addaction name="action_5"/>
+    <addaction name="action_6"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>提示</string>
+    </property>
+    <addaction name="action_help"/>
+   </widget>
+   <addaction name="newGame"/>
+   <addaction name="saveGame"/>
+   <addaction name="loadGame"/>
+   <addaction name="menu_2"/>
+   <addaction name="setFont"/>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action">
+   <property name="text">
+    <string>主数字</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>键盘字体</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="text">
+    <string>查看规则</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>关于本软件</string>
+   </property>
+  </action>
+  <action name="action_help">
+   <property name="text">
+    <string>获得提示</string>
+   </property>
+  </action>
+  <action name="show_shortcuts">
+   <property name="text">
+    <string>查看快捷键</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
