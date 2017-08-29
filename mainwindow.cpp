@@ -69,6 +69,32 @@ MainWindow::MainWindow(QWidget *parent) :
     }
     b_sele_layout->setMargin(180);
 
+    QGridLayout* gl2 = new QGridLayout;
+    key=new QPushButton*[10];
+    QString a;
+    for(int i=0;i<9;++i)
+    {
+        key[i]=new QPushButton(a.setNum(i+1));
+        key[i]->setFont(ft3);
+        gl2->addWidget(key[i],i/3,i%3,Qt::AlignCenter|Qt::AlignHCenter);
+        key[i]->setMinimumSize(40,40);
+        connect(key[i],SIGNAL(clicked(bool)),this,SLOT(keyboardclicked()));
+    }
+    key[9]=new QPushButton(tr("C"));
+    QPalette pal;
+    pal.setColor(QPalette::ButtonText,QColor("#ff0000"));
+    key[9]->setPalette(pal);
+    gl2->addWidget(key[9],3,1,Qt::AlignCenter|Qt::AlignHCenter);
+    key[9]->setMinimumSize(40,40);
+    key[9]->setFont(ft3);
+    for( int i=0 ; i<3; ++i)
+    {
+        gl2->setRowStretch(i,1);
+        gl2->setColumnStretch(i,1);
+    }
+    gl2->setRowStretch(3,1);
+    connect(key[9],SIGNAL(clicked(bool)),this,SLOT(keyboardclicked()));
+
     widget = new QWidget();
     m_widget->addWidget(widget);
     this->setWindowTitle(tr("数独小游戏"));
@@ -119,32 +145,6 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->loadGame->addAction(s);
         connect(s,SIGNAL(triggered(bool)),this,SLOT(loadGameClicked()));
     }
-
-    QGridLayout* gl2 = new QGridLayout;
-    key=new QPushButton*[10];
-    QString a;
-    for(int i=0;i<9;++i)
-    {
-        key[i]=new QPushButton(a.setNum(i+1));
-        key[i]->setFont(ft3);
-        gl2->addWidget(key[i],i/3,i%3,Qt::AlignCenter|Qt::AlignHCenter);
-        key[i]->setMinimumSize(40,40);
-        connect(key[i],SIGNAL(clicked(bool)),this,SLOT(keyboardclicked()));
-    }
-    key[9]=new QPushButton(tr("C"));
-    QPalette pal;
-    pal.setColor(QPalette::ButtonText,QColor("#ff0000"));
-    key[9]->setPalette(pal);
-    gl2->addWidget(key[9],3,1,Qt::AlignCenter|Qt::AlignHCenter);
-    key[9]->setMinimumSize(40,40);
-    key[9]->setFont(ft3);
-    for( int i=0 ; i<3; ++i)
-    {
-        gl2->setRowStretch(i,1);
-        gl2->setColumnStretch(i,1);
-    }
-    gl2->setRowStretch(3,1);
-    connect(key[9],SIGNAL(clicked(bool)),this,SLOT(keyboardclicked()));
 
     gl2->setSpacing(0);
     widget2->setMinimumSize(120,160);
