@@ -1,4 +1,4 @@
-/*************************************************************************
+﻿/*************************************************************************
 	> File Name: sudokucrack.cpp
 	> Author: zj
 	> Mail: zhangjian0395@163.com
@@ -8,7 +8,8 @@
 #include<iostream>
 #include <random>
 #include "sudokucrack.h"
-static std::default_random_engine e(time(0));//c++11，需要头文件random，windows可能还需要头文件ctime
+#include <ctime>
+static std::default_random_engine e(time(0));//c++11
 static std::uniform_int_distribution<int> u(0,1);
 int SudokuCrack::times=0;
 SudokuCrack::SudokuCrack(vvint& tt) : vvnum(tt)
